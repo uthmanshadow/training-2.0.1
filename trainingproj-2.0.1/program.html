@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Registration</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Unique styling for navbar */
+    .navbar {
+      background-color: #343a40; /* Dark color for navbar */
+      z-index: 1; /* Ensure navbar stays on top */
+    }
+
+    .navbar-toggler-icon {
+      background-color: #fff; /* White color for the toggler icon */
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important; /* White color for the links */
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #dfe6e9 !important; /* Lighter shade of white on hover */
+    }
+
+    /* Additional styling for offcanvas sidebar */
+    .sidebar {
+      position: fixed; /* Position sidebar fixed */
+      top: 55px; /* Align to the top, below the navbar */
+      left: 0; /* Align to the left */
+      height: calc(100% - 55px); /* Full height minus navbar height */
+      width: 200px; /* Fixed width */
+      background-color: #2ecc71; /* Green color for sidebar */
+      padding: 20px;
+      z-index: 0; /* Ensure sidebar stays below navbar */
+    }
+
+    .sidebar button {
+      margin-bottom: 10px; /* Add margin below buttons */
+    }
+
+    /* Main content styling */
+    .container {
+      margin-top: 20px;
+      margin-left: 220px; /* Adjust margin to accommodate sidebar */
+      padding: 20px;
+    }
+
+    /* Custom styling for admin button */
+    .admin-btn {
+      background-color: #fff; /* White background */
+      color: #343a40; /* Dark color for text */
+      border: none; /* Remove border */
+      border-radius: 50%; /* Make button round */
+      width: 30px; /* Set width */
+      height: 30px; /* Set height */
+      padding: 0; /* Remove padding */
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Training Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <!-- Move the form and the admin button to the right -->
+      <form class="form-inline my-2 my-lg-0 mr-2 search-form">
+        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0 search-btn" type="submit">Search</button>
+        <button class="btn btn-outline-light my-2 my-sm-0 admin-btn ml-2" type="submit">
+          <img src="admin_logo.png" alt="Admin" width="20" height="20">
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="sidebar">
+  <!-- Sidebar content -->
+  <div class="mb-3">
+    <button class="btn btn-primary">Update</button>
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-primary">Delete</button>
+  </div>
+  <div>
+    <button class="btn btn-primary">Print</button>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Main content -->
+  <h2>Program Registration</h2>
+  <form>
+    <div class="form-group">
+      <label for="programName">Program Name:</label>
+      <input type="text" class="form-control" id="programName" placeholder="Enter program name" required>
+    </div>
+    <div class="form-group">
+      <label for="programNumber">Program Number:</label>
+      <input type="text" class="form-control" id="programNumber" placeholder="Enter program number"name="programNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="venue">Venue:</label>
+      <input type="text" class="form-control" id="venue" placeholder="Enter venue" required>
+    </div>
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" class="form-control" id="date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+   <!-- javascript -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get the form element
+    const form = document.querySelector('form');
+
+    // Add event listener for form submission
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Get form fields values
+      const programName = document.getElementById('programName').value;
+      const programNumber = document.getElementById('programNumber').value;
+      const venue = document.getElementById('venue').value;
+      const date = document.getElementById('date').value;
+
+      // Perform form validation
+      if (!programName || !programNumber || !venue || !date) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      // If form is valid, you can proceed with form submission
+      // For demonstration purposes, I'm just logging the form data
+      console.log('Program Name:', programName);
+      console.log('Program Number:', programNumber);
+      console.log('Venue:', venue);
+      console.log('Date:', date);
+
+      // Here you can perform AJAX request or any other logic to handle form submission
+    });
+  });
+</script>
+
+
+</body>
+</html>

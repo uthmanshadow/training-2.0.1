@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Management System</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Unique styling for navbar */
+    .navbar {
+      background-color: #343a40; /* Dark color for navbar */
+      z-index: 1; /* Ensure navbar stays on top */
+    }
+
+    .navbar-toggler-icon {
+      background-color: #fff; /* White color for the toggler icon */
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important; /* White color for the links */
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #dfe6e9 !important; /* Lighter shade of white on hover */
+    }
+
+    /* Additional styling for offcanvas sidebar */
+    .sidebar {
+      position: fixed; /* Position sidebar fixed */
+      top: 55px; /* Align to the top, below the navbar */
+      left: 0; /* Align to the left */
+      height: calc(100% - 55px); /* Full height minus navbar height */
+      width: 200px; /* Fixed width */
+      background-color: #2ecc71; /* Green color for sidebar */
+      padding: 20px;
+      z-index: 0; /* Ensure sidebar stays below navbar */
+    }
+
+    .sidebar button {
+      width: 100%; /* Make buttons fill the width of the sidebar */
+      margin-bottom: 10px; /* Add margin below buttons */
+    }
+
+    .content {
+      margin-left: 200px; /* Adjust margin to accommodate sidebar */
+      padding: 20px;
+    }
+
+    /* Custom styling for admin button */
+    .admin-btn {
+      background-color: #fff; /* White background */
+      color: #343a40; /* Dark color for text */
+      border: none; /* Remove border */
+      border-radius: 50%; /* Make button round */
+      width: 30px; /* Set width */
+      height: 30px; /* Set height */
+      padding: 0; /* Remove padding */
+    }
+
+    /* Custom styling for search form */
+    .search-form {
+      margin-right: 10px; /* Add margin to the right */
+    }
+
+    .search-input {
+      width: 150px; /* Set width */
+      height: auto; /* Set height */
+      padding: 6px 10px; /* Adjust padding */
+    }
+
+    /* Main content styling */
+    .container {
+      margin-top: 20px;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .btn-container .btn {
+      margin: 10px;
+    }
+
+    .btn-logo {
+      display: block;
+      width: 100px; /* Adjust size of button icon */
+      height: 100px; /* Adjust size of button icon */
+      background-size: cover;
+      border-radius: 50%;
+      margin: auto;
+    }
+
+    .btn-label {
+      color: #333;
+      margin-top: 10px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Training Management System</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard.html">Home</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 mr-2 search-form">
+        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0 admin-btn" type="submit">
+          <img src="admin_logo.png" alt="Admin" width="20" height="20">
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="sidebar">
+  <!-- Sidebar content -->
+  <button class="btn btn-primary mb-3">Update</button>
+  <button class="btn btn-primary mb-3">Delete</button>
+  <button class="btn btn-primary">Print</button>
+</div>
+
+<div class="container content">
+  <!-- Main content -->
+  <div class="btn-container row justify-content-center">
+    <div class="col-md-4 text-center">
+      <a href="employee.html" class="btn btn-primary">
+        <div class="btn-logo" style="background-image: url('employee.png')"></div>
+      </a>
+      <p class="btn-label">Employee</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="program.html" class="btn btn-primary">
+        <div class="btn-logo" style="background-image: url('program.png')"></div>
+      </a>
+      <p class="btn-label">Program</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <a href="#" class="btn btn-primary">
+        <div class="btn-logo" style="background-image: url('view.png')"></div>
+      </a>
+      <p class="btn-label">View</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Enrollment</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+  <style>
+    /* Unique styling for navbar */
+    .navbar {
+      background-color: #343a40; /* Dark color for navbar */
+      z-index: 1; /* Ensure navbar stays on top */
+    }
+
+    .navbar-toggler-icon {
+      background-color: #fff; /* White color for the toggler icon */
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important; /* White color for the links */
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #dfe6e9 !important; /* Lighter shade of white on hover */
+    }
+
+    /* Additional styling for offcanvas sidebar */
+    .sidebar {
+      position: fixed; /* Position sidebar fixed */
+      top: 55px; /* Align to the top, below the navbar */
+      left: 0; /* Align to the left */
+      height: calc(100% - 55px); /* Full height minus navbar height */
+      width: 200px; /* Fixed width */
+      background-color: #2ecc71; /* Green color for sidebar */
+      padding: 20px;
+      z-index: 0; /* Ensure sidebar stays below navbar */
+    }
+
+    .sidebar button {
+      margin-bottom: 10px; /* Add margin below buttons */
+    }
+
+    /* Main content styling */
+    .container {
+      margin-top: 20px;
+      margin-left: 220px; /* Adjust margin to accommodate sidebar */
+      padding: 20px;
+    }
+
+    /* Custom styling for admin button */
+    .admin-btn {
+      background-color: #fff; /* White background */
+      color: #343a40; /* Dark color for text */
+      border: none; /* Remove border */
+      border-radius: 50%; /* Make button round */
+      width: 30px; /* Set width */
+      height: 30px; /* Set height */
+      padding: 0; /* Remove padding */
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Training Management System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <!-- Move the form and the admin button to the right -->
+      <form class="form-inline my-2 my-lg-0 mr-2 search-form">
+        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0 search-btn" type="submit">Search</button>
+        <button class="btn btn-outline-light my-2 my-sm-0 admin-btn ml-2" type="submit">
+          <img src="admin_logo.png" alt="Admin" width="20" height="20">
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="sidebar">
+  <!-- Sidebar content -->
+  <div class="mb-3">
+    <button class="btn btn-primary">Update</button>
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-primary">Delete</button>
+  </div>
+  <div>
+    <button class="btn btn-primary">Print</button>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Main content -->
+  <h2>Training Enrollment Form</h2>
+  <form id="enrollmentForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="nameDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Name
+        </button>
+        <div class="dropdown-menu" aria-labelledby="nameDropdown">
+          <a class="dropdown-item" href="#">John Doe</a>
+          <a class="dropdown-item" href="#">Jane Smith</a>
+          <a class="dropdown-item" href="#">Michael Johnson</a>
+          <!-- Add more options here -->
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="personalNo">Personal No:</label>
+      <input type="text" class="form-control" id="personalNo" placeholder="Enter personal number" required>
+    </div>
+    <div class="form-group">
+      <label for="department">Department:</label>
+      <input type="text" class="form-control" id="department" placeholder="Enter department" required>
+    </div>
+    <div class="form-group">
+      <label for="program">Program:</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="programDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Program
+        </button>
+        <div class="dropdown-menu" aria-labelledby="programDropdown">
+          <a class="dropdown-item" href="#">Training A</a>
+          <a class="dropdown-item" href="#">Training B</a>
+          <a class="dropdown-item" href="#">Training C</a>
+          <!-- Add more options here -->
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="startDate">Start Date:</label>
+      <input type="date" class="form-control" id="startDate" required>
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date:</label>
+      <input type="date" class="form-control" id="endDate" required>
+    </div>
+    <div class="form-group">
+      <label for="days">Duration (Days):</label>
+      <input type="text" class="form-control" id="days" disabled>
+    </div>
+    <button type="submit" class="btn btn-primary">Enroll</button>
+  </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.dropdown-toggle').dropdown();
+
+    // Event listener for name dropdown items
+    $(".dropdown-item").on("click", function() {
+      var selectedName = $(this).text().trim();
+      // Assume you have some data structure or API to fetch personal number and department based on the selected name
+      // For demonstration, I'll just hardcode some values
+      var personalNo;
+      var department;
+
+      // You can replace this with actual data fetching logic
+      if (selectedName === "John Doe") {
+        personalNo = "JD123";
+        department = "IT";
+      } else if (selectedName === "Jane Smith") {
+        personalNo = "JS456";
+        department = "HR";
+      } else if (selectedName === "Michael Johnson") {
+        personalNo = "MJ789";
+        department = "Finance";
+      }
+
+      // Update personal number and department fields
+      $("#personalNo").val(personalNo);
+      $("#department").val(department);
+    });
+  });
+
+  document.getElementById("enrollmentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    var name = document.getElementById("nameDropdown").textContent.trim();
+    var personalNo = document.getElementById("personalNo").value;
+    var department = document.getElementById("department").value;
+    var program = document.getElementById("programDropdown").textContent.trim();
+    var startDate = document.getElementById("startDate").value;
+    var endDate = document.getElementById("endDate").value;
+    
+    // Calculate the duration in days
+    var start = new Date(startDate);
+    var end = new Date(endDate);
+    var duration = (end - start) / (1000 * 60 * 60 * 24);
+    
+    document.getElementById("days").value = duration;
+    
+    // Here you can proceed with the enrollment process
+    console.log("Enrollment details:");
+    console.log("Name: " + name);
+    console.log("Personal No: " + personalNo);
+    console.log("Department: " + department);
+    console.log("Program: " + program);
+    console.log("Start Date: " + startDate);
+    console.log("End Date: " + endDate);
+    console.log("Duration (Days): " + duration);
+  });
+</script>
+
+</body>
+</html>

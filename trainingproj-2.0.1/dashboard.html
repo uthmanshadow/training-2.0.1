@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Management System</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Unique styling for navbar */
+    .navbar {
+      background-color: #343a40; /* Dark color for navbar */
+      z-index: 1; /* Ensure navbar stays on top */
+      position: relative; /* Position navbar relative */
+      transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
+    }
+
+    .navbar-toggler-icon {
+      background-color: #fff; /* White color for the toggler icon */
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important; /* White color for the links */
+      transition: color 0.3s ease-in-out; /* Smooth transition for link color */
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #dfe6e9 !important; /* Lighter shade of white on hover */
+    }
+
+    /* Additional styling for offcanvas sidebar */
+    .sidebar {
+      position: fixed; /* Position sidebar fixed */
+      top: 55px; /* Align to the top, below the navbar */
+      left: 0; /* Align to the left */
+      height: calc(100% - 55px); /* Full height minus navbar height */
+      width: 200px; /* Fixed width */
+      background-color: #2ecc71; /* Green color for sidebar */
+      padding: 20px;
+      z-index: 0; /* Ensure sidebar stays below navbar */
+      transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
+    }
+
+    .sidebar button {
+      width: 100%; /* Make buttons fill the width of the sidebar */
+      margin-bottom: 10px; /* Add margin below buttons */
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for button colors */
+    }
+
+    .sidebar button:hover {
+      background-color: #27ae60; /* Darker green on hover */
+      color: #fff; /* White text on hover */
+    }
+
+    .content {
+      margin-left: 200px; /* Adjust margin to accommodate sidebar */
+      padding: 20px;
+    }
+
+    /* Custom styling for admin button */
+    .admin-btn {
+      background-color: #fff; /* White background */
+      color: #343a40; /* Dark color for text */
+      border: none; /* Remove border */
+      border-radius: 50%; /* Make button round */
+      width: 30px; /* Set width */
+      height: 30px; /* Set height */
+      padding: 0; /* Remove padding */
+      position: absolute; /* Position admin button absolutely */
+      top: 15px; /* Align to the top */
+      right: 50px; /* Align to the right */
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for background color and transform */
+    }
+
+    .admin-btn:hover {
+      background-color: #f1f1f1; /* Light gray on hover */
+      transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+
+    /* Custom styling for search form */
+    .search-form {
+      position: absolute; /* Position search form absolutely */
+      top: 50%; /* Align search form vertically */
+      right: 100px; /* Align search form to the right */
+      transform: translateY(-50%); /* Center search form vertically */
+    }
+
+    .search-input {
+      width: 100px; /* Set width */
+      height: auto; /* Set height */
+      padding: 6px 10px; /* Adjust padding */
+    }
+
+    .search-btn {
+      background-color: #007bff; /* Blue background */
+      color: #fff; /* White color for text */
+      border: none; /* Remove border */
+      border-radius: 5px; /* Rounded border */
+      padding: 6px 10px; /* Adjust padding */
+      cursor: pointer; /* Add pointer cursor */
+      transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
+    }
+
+    .search-btn:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Training</a>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Program</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="enroll.html">Enroll</a>
+          </li>
+      </ul>
+      <!-- Move the form and the admin button to the right -->
+      <form class="form-inline my-2 my-lg-0 search-form">
+        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0 search-btn" type="submit">Search</button>
+      </form>
+      <button class="btn btn-outline-light my-2 my-sm-0 admin-btn" type="submit">
+        <a href="admin.html"><img src="admin_logo.png" alt="Admin" width="20" height="20"></a>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="sidebar">
+  <!-- Sidebar content -->
+  <button class="btn btn-primary mb-3">Update</button>
+  <button class="btn btn-primary mb-3">Delete</button>
+  <button class="btn btn-primary">View</button>
+</div>
+<div class="content">
+  <!-- Main content here -->
+</div>
+
+</body>
+</html>
